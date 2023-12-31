@@ -1,7 +1,15 @@
 # BUY THE API KEY HERE: https://platform.openai.com/signup
-from flask import Flask
+from flask import Flask,request
+import git
 
 app = Flask(__name__)
+
+@app.route('/update_server', methods=['POST'])
+def webhook():
+    if request.method == 'POST':
+        repo = git.Repo('path/to/git_repo')
+        origin = repo.remotes.origin
+        origin.pull()
 
 
 @app.route("/")
