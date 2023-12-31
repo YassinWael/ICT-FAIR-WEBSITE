@@ -10,7 +10,7 @@ def webhook():
     repo = git.Repo('/home/Cookarino/mysite/ICT-FAIR-WEBSITE')
     origin = repo.remotes.origin
     origin.pull()
-    return '', 200
+    return 200
         
 
 
