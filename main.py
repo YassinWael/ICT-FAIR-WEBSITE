@@ -4,9 +4,8 @@ import git
 
 app = Flask(__name__)
 
-@app.route('/update_server', methods=['POST'])
+@app.route('/update_server')
 def webhook():
-    if request.method == 'POST':
         repo = git.Repo('path/to/git_repo')
         origin = repo.remotes.origin
         origin.pull()
@@ -20,4 +19,4 @@ def home():
 if __name__ == '__main__' :
     app.run(debug=True)
 
-# making sure syncing works
+# testing sync again
