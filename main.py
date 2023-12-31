@@ -9,8 +9,6 @@ def webhook():
        
     repo = git.Repo('/home/Cookarino/mysite/ICT-FAIR-WEBSITE')
     origin = repo.remotes.origin
-    repo.create_head('master', 
-    origin.refs.master).set_tracking_branch(origin.refs.master).checkout()
     origin.pull()
     return '', 200
         
@@ -24,4 +22,4 @@ def home():
 if __name__ == '__main__' :
     app.run(debug=True)
 
-# testing sync again.7
+# testing sync again.8
