@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/update_server')
 def webhook():
-        repo = git.Repo('https://github.com/YassinWael/ICT-FAIR-WEBSITE.git')
+        repo = git.Repo('YassinWael/ICT-FAIR-WEBSITE')
         origin = repo.remotes.origin
         origin.pull()
 
