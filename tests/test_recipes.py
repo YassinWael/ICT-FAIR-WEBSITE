@@ -1,6 +1,6 @@
 import openai
 
-
+client = openai.OpenAI(api_key='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')
 
 user_ingredients = input("Tell us what you have, We only assume water and salt :  ") + " Water and salt"
 country = input("Enter your country (Optional):  ")
@@ -18,19 +18,15 @@ def chatgpt(api,ingredients,country=""):
         None
     """
     
-
-    prompt =  f"hello, based ONLY (NO MATTER HOW MUCH THE INGREDIENTS IS SMALL, ONLY USE THOSE) on the following ingredients: '{ingredients}', Name 5 {country} foods that I can make. Talk in an intuitive way and catchy while using simple words, also mention how much approximately the time needed to cook this" if country else f"hello, based ONLY on {user_ingredients}, Name 5 foods that I can make. Talk in an intuitive way and catchy while using simple words, also mention how much approximately the time needed to cook this" 
-    print(prompt)
-    from pyperclip import copy
-    copy(prompt)
-    openai.api_key = api
-    response = openai.Completion.create(
-        model="Gpt-3.5-turbo",  
-        prompt= prompt,
-        temperature=0.7,
-        max_tokens=256,
-        top_p=1,
-    )
+    response = client.chat.completions.create(
+  model="gpt-3.5-turbo",
+  messages=[
+    {"role": "system", "content": "You are an Experienced chef. Create 3 meals with provided ingredients ONLY. Specify cooking time for each, no cooking instructions."},
+    {"role": "user", "content": f"{ingredients}, from {country}"}
+  ]
+)
+    
+    print(response.choices[0].message.content)
 
 
-chatgpt("12421432",user_ingredients,country)
+chatgpt("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",user_ingredients,country)
