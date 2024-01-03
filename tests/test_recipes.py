@@ -14,6 +14,15 @@ pattern2 = "\*\*(.*?)\*\*" #chatgpt some times put two astericks
 user_ingredients = input("Tell us what you have, We only assume water and salt :  ") + " Water and salt and pepper"
 country = input("Enter your country (Optional):  ")
 
+
+def find_meal_names(text):
+    meal_names = findall(pattern,text)
+    if not meal_names:
+        meal_names = findall(pattern2,text)
+    return meal_names
+
+
+
 def chatgpt(ingredients,country="mix of contries"):
     """
     Generates a chat-based prompt for the OpenAI GPT-3.5-turbo model to retrieve 5 food suggestions based on a given list of ingredients and an optional country.
@@ -41,11 +50,9 @@ def chatgpt(ingredients,country="mix of contries"):
     tokens_total = response.usage.total_tokens
     ic(tokens_total)
     print(chatgpt_answer)
-    meal_names = findall(pattern,chatgpt_answer)
-    if not meal_names:
-        meal_names = findall(pattern2,chatgpt_answer)
+    meal_names = find_meal_names(chatgpt_answer)
     print(meal_names)
-    print(len(meal_names))
+    return meal_names
 
 
 chatgpt(user_ingredients,country)
