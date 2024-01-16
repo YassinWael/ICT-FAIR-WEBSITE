@@ -1,5 +1,4 @@
 import requests
-import json
 from icecream import ic
 from os import getenv
 import dotenv
@@ -28,12 +27,10 @@ def search_by_ingredients(ingredients):
     headers['ingredients'] = ingredients
     headers['number'] = 5
     headers['ignorePanrty'] = 'false'
-    headers['sort'] = "min-missing-ingredients"
-
+    ic("Sending Api request...")
     response = requests.get(f"{url}findByIngredients",params=headers)
-    ic(response)
+    ic(f"Received response: {response}")
     data = response.json()
-    ic(data)
     meals = {} 
     for recipe in data:
         ic(recipe['title'])
@@ -47,16 +44,13 @@ def search_by_ingredients(ingredients):
         if len(missed_ingredients) <= 4:
             meals[recipe['title']] = [recipe['image'],recipe['id'],missed_ingredients]
 
-        print(f"for {recipe['title']} : {' and '.join(missed_ingredients)} are missing ingredients")
+        print()
+        print()
         print()
     return meals
 
 
 
-
-
-meals = search_by_ingredients(ingredients) 
-ic(meals)
 
     
 
