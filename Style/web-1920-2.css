@@ -1,0 +1,376 @@
+body{
+  overflow: hidden;
+}
+.pexels-lumn-1028599-icon {
+    position: absolute;
+    top: -1081px;
+    left: 0;
+    width: 1920px;
+    height: 2050px;
+    object-fit: cover;
+  }
+  .great-app-to {
+    margin: 0;
+  }
+  .great-app-to-container {
+    position: absolute;
+    top: 27px;
+    left: calc(50% - 102.5px);
+    font-weight: 600;
+  }
+  .george-russel {
+    position: absolute;
+    top: 8px;
+    right: 34px;
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+  }
+  .icon-akar-star,
+  .icon-akar-star1,
+  .icon-akar-star2,
+  .icon-akar-star3,
+  .icon-akar-star4 {
+    position: absolute;
+    bottom: 10.13px;
+    left: calc(50% + 25.06px);
+    width: 16.87px;
+    height: 16.87px;
+    object-fit: cover;
+  }
+  .icon-akar-star1,
+  .icon-akar-star2,
+  .icon-akar-star3,
+  .icon-akar-star4 {
+    left: calc(50% + 40.06px);
+  }
+  .icon-akar-star2,
+  .icon-akar-star3,
+  .icon-akar-star4 {
+    left: calc(50% + 55.63px);
+  }
+  .icon-akar-star3,
+  .icon-akar-star4 {
+    left: calc(50% + 70.63px);
+  }
+  .icon-akar-star4 {
+    left: calc(50% + 85.5px);
+  }
+  .rating-box {
+    position: absolute;
+    top: 205px;
+    left: 183px;
+    border-radius: var(--br-17xl);
+    background-color: var(--color-mintcream);
+    width: 301px;
+    height: 196px;
+    font-size: var(--font-size-3xl);
+  }
+  .web-1920-2-child {
+    position: absolute;
+    top: 73.5px;
+    left: 105.5px;
+    filter: blur(16px);
+    border-right: 1px solid var(--color-linen);
+    box-sizing: border-box;
+    width: 50px;
+    height: 98px;
+  }
+  .cookarino1 {
+    position: absolute;
+    top: 74.61px;
+    left: 891.25px;
+    font-size: var(--font-size-11xl);
+    font-family: var(--font-sansi);
+    opacity: 0.42;
+  }
+  .web-1920-2-item {
+    position: absolute;
+    top: 130.5px;
+    left: 109.5px;
+    border-top: 1px solid var(--color-darkgray-200);
+    box-sizing: border-box;
+    width: 30px;
+    height: 2px;
+  }
+  .web-1920-2-inner {
+    position: absolute;
+    top: 26.39px;
+    left: 913.73px;
+    width: 71.04px;
+    height: 45.22px;
+    object-fit: cover;
+  }
+  .assuming-that-you {
+    position: absolute;
+    top: 526px;
+    left: 685px;
+    font-weight: 500;
+    color: #b4b4b4;
+  }
+  .group-child1,
+  .rectangle-div {
+    position: absolute;
+    border-radius: var(--br-xs);
+    background-color: var(--color-whitesmoke-100);
+    height: 49px;
+  }
+  .rectangle-div {
+    top: calc(50% + 17px);
+    left: 25px;
+    width: 337px;
+  }
+  .group-child1 {
+    right: 40px;
+    bottom: 18px;
+    width: 109px;
+  }
+  .first-ingredient {
+    position: absolute;
+    top: 38px;
+    left: 46px;
+    font-weight: 300;
+  }
+  .add-more-ingredients,
+  .second-ingredient {
+    position: absolute;
+    top: calc(50% - 35px);
+    left: 45px;
+    font-weight: 300;
+  }
+  .add-more-ingredients {
+    top: calc(50% + 30px);
+    left: 75px;
+  }
+  .origin-country {
+    font-weight: 300;
+  }
+  .optional {
+    font-weight: 500;
+  }
+  .origin-country-optional-container {
+    position: absolute;
+    bottom: 28px;
+    left: 46px;
+  }
+  .line-div {
+    top: calc(50% - 56px);
+    border-top: 1px solid var(--color-darkgray-100);
+  }
+  .group-child2,
+  .group-child3,
+  .line-div {
+    position: absolute;
+    left: calc(50% - 71.5px);
+    box-sizing: border-box;
+    width: 127px;
+    height: 2px;
+  }
+  .group-child2 {
+    top: calc(50% + 10px);
+    border-top: 1px solid var(--color-darkgray-100);
+  }
+  .group-child3 {
+    top: calc(50% + 71px);
+    border-top: 1px solid #d4d5d3;
+  }
+  .icon-akar-plus {
+    position: absolute;
+    top: calc(50% + 32.5px);
+    left: 43.5px;
+    width: 18px;
+    height: 18px;
+    object-fit: cover;
+  }
+  .rectangle-group {
+    position: absolute;
+    top: 233px;
+    left: 685px;
+    border-radius: var(--br-17xl);
+    background-color: var(--color-mintcream);
+    width: 582px;
+    height: 276px;
+    font-size: var(--font-size-mid);
+    color: var(--color-darkgray-300);
+  }
+  .lets-cook {
+    position: absolute;
+    top: 115px;
+    left: 295px;
+    font-size: 68px;
+    font-weight: 500;
+    color: #555b6e;
+  }
+  .group-child4,
+  .group-child5 {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .group-child4 {
+    width: 100%;
+    left: 0;
+    background-color: var(--color-darkslategray-100);
+  }
+  .group-child5 {
+    width: calc(100% - 19px);
+    left: 19px;
+    background-color: var(--color-darkslategray-200);
+    backdrop-filter: blur(30px) brightness(115%);
+  }
+  .cookarino2 {
+    position: absolute;
+    top: 74px;
+    left: calc(50% - 51.5px);
+    font-size: var(--font-size-11xl);
+    font-family: var(--font-sansi);
+  }
+  .group-child6 {
+    position: absolute;
+    top: 130.5px;
+    left: calc(50% - 9px);
+    border-top: 1px solid var(--color-darkgray-200);
+    box-sizing: border-box;
+    width: 30px;
+    height: 2px;
+  }
+  .group-child7 {
+    position: absolute;
+    top: calc(50% - 378px);
+    left: calc(50% - 26.5px);
+    border-radius: 50%;
+    width: 66px;
+    height: 66px;
+    object-fit: cover;
+  }
+  .favourite-recipes1,
+  .past-recipes1 {
+    position: absolute;
+    top: calc(50% - 285px);
+    left: calc(50% - 88.5px);
+    font-size: var(--font-size-mini);
+  }
+  .favourite-recipes1 {
+    top: calc(50% - 68px);
+    left: calc(50% - 89.5px);
+  }
+  .mash-potato-and4,
+  .min-pizza1 {
+    position: absolute;
+    top: calc(50% - 244px);
+    left: calc(50% - 88.5px);
+    font-weight: 300;
+  }
+  .min-pizza1 {
+    top: calc(50% - 27px);
+  }
+  .ingredient-salad1,
+  .mash-potato-and5,
+  .mash-potato-and6,
+  .mash-potato-and7 {
+    position: absolute;
+    top: calc(50% - 208px);
+    left: calc(50% - 88.5px);
+    font-weight: 300;
+  }
+  .ingredient-salad1,
+  .mash-potato-and6,
+  .mash-potato-and7 {
+    top: calc(50% + 9px);
+  }
+  .mash-potato-and6,
+  .mash-potato-and7 {
+    top: calc(50% - 172px);
+  }
+  .mash-potato-and7 {
+    top: calc(50% + 45px);
+  }
+  .group-child8 {
+    position: absolute;
+    top: 38.25px;
+    left: calc(50% - 16px);
+    width: 45.17px;
+    height: 28.75px;
+    object-fit: cover;
+  }
+  .rectangle-container {
+    position: absolute;
+    top: 0;
+    left: -19px;
+    width: 275px;
+    height: 1080px;
+    color: var(--color-ivory);
+  }
+  .helped-me-cook-my-container {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    font-weight: 600;
+  }
+  .michael-russel {
+    position: absolute;
+    top: 8px;
+    right: 38px;
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+  }
+  .icon-akar-star5 {
+    position: absolute;
+    bottom: 13.13px;
+    left: 32.56px;
+    width: 16.87px;
+    height: 16.87px;
+    object-fit: cover;
+  }
+  .icon-akar-star6,
+  .icon-akar-star7,
+  .icon-akar-star8,
+  .icon-akar-star9 {
+    position: absolute;
+    bottom: 13.13px;
+    left: calc(50% - 102.94px);
+    width: 16.87px;
+    height: 16.87px;
+    object-fit: cover;
+  }
+  .icon-akar-star7,
+  .icon-akar-star8,
+  .icon-akar-star9 {
+    left: calc(50% - 87.37px);
+  }
+  .icon-akar-star8,
+  .icon-akar-star9 {
+    left: calc(50% - 72.37px);
+  }
+  .icon-akar-star9 {
+    left: calc(50% - 57.5px);
+  }
+  .rating-box1 {
+    position: absolute;
+    top: 195px;
+    right: -89px;
+    border-radius: var(--br-17xl);
+    background-color: var(--color-mintcream);
+    width: 301px;
+    height: 196px;
+    font-size: var(--font-size-lg);
+  }
+  .create {
+    position: absolute;
+    top: 454px;
+    left: 1142px;
+    font-size: var(--font-size-mid);
+    font-weight: 300;
+    color: var(--color-darkgray-300);
+  }
+  .web-1920-2 {
+    position: relative;
+    background-color: var(--color-white);
+    width: 100%;
+    height: 1080px;
+    text-align: center;
+    font-size: var(--font-size-xs);
+    color: var(--color-darkslategray-100);
+    font-family: var(--font-poppins);
+  }

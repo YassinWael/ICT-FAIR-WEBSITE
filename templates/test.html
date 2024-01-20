@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Ingredients</title>
+  <script>
+    // Function to add a new text input
+    function addIngredient() {
+      // Check if the maximum limit is reached
+      var ingredientCount = document.getElementsByClassName('ingredient-input').length;
+      if (ingredientCount >= 5) {
+        alert('Maximum limit reached (5 ingredients)');
+        return;
+      }
+
+      // Create a new text input
+      var newInput = document.createElement('input');
+      newInput.type = 'text';
+      newInput.name = 'ingredient';
+      newInput.className = 'ingredient-input';
+      newInput.placeholder = 'Ingredient ' + (ingredientCount + 3); // Change placeholder dynamically
+
+      // Append the new input to the container
+      document.getElementById('ingredient-container').appendChild(newInput);
+    }
+  </script>
+</head>
+<body>
+
+  <div id="ingredient-container">
+    <!-- Initial text input fields go here -->
+    <input type="text" name="ingredient" class="ingredient-input" placeholder="First Ingredient">
+    <br>
+    <input type="text" name="ingredient" class="ingredient-input" placeholder="Second Ingredient">
+  </div>
+
+  <!-- Button to add new ingredients -->
+  <button onclick="addIngredient()">Add Ingredients</button>
+
+</body>
+</html>
