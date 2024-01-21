@@ -4,82 +4,346 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookarino</title>
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+  </head>
 <body>
-        {% block content %}{%endblock%}
+        
+        <main>
+            <nav class="navbar">
+              <div class="brand" anchor = "navbar">
+                <img src="https://i.postimg.cc/rmZs4Svf/Artboard-4.png" alt="Cookarino Logo" id="brand-logo">
+                <h1 id="brand-name">Cookarino</h1>
+                <hr id="brand-hr">
+              </div>
 
-        <div class="logo2"><img src="../static/images/Artboard 4.2.png" alt=""></div>
-        <form class="ingredients"action="">
-            <input class="text" type="text" placeholder="First Ingredient"name="fingredient" id="fingredient">
-            <br>
-            <div class="lineform"><hr></div>
-            <br>
-            <input class="text" type="text" placeholder="Second Ingredient"name="singredient" id="singredient">
-            <br>
-            <div class="lineform"><hr></div>
-            <br>
-            <input type="text" class="add" placeholder="Add Ingredients" name="addingredient" id="ingredient">
-            <br>
-            <br>
-            <input class="gen" type="submit" value="Generate">
-        </form>
+              <div class="past-recipes">
+                 <h2 class="past-recipes-title"id="past-recipes-title">Past Recipes</h2>
+                  <ul id="past-recipes-list">
+                    <li class="past-recipes-item">
+                      <a class="past-recipes-link" href="#">Item 1</a>
+                    </li>
+                    <li class="past-recipes-item">
+                      <a class="past-recipes-link" href="#">Item 2</a>
+
+                    </li>
+                    <li class="past-recipes-item">
+                      <a class="past-recipes-link" href="#">Item 3</a>
+                    </li>
+                  </ul>
+                </div>
+            </nav>
+            <div class="container">
+
+            <nav class="mobile-nav">
+              <h2 class="past-recipes-title-mobile" id="past-recipes-title">Past Recipes</h2>
+              <ul id="past-recipes-list">
+                <li class="past-recipes-item-mobile">
+                  <a class="past-recipes-link" href="#">Item 1</a>
+                </li>
+                <li class="past-recipes-item-mobile">
+                  <a class="past-recipes-link" href="#">Item 2</a>
+
+                </li>
+                <li class="past-recipes-item-mobile">
+                  <a class="past-recipes-link" href="#">Item 3</a>
+                </li>
+                </ul>
+            </nav>
+            <button class="hamburger">
+              <div class="bar"></div>
+            </button>
+            </div>
+            {% block content %}{%endblock%}
+        </main>
+  
+  
+  
+  
+  
+  
+  
+        
+        
         <style>
-            .ingredients{
-                width: 530px;
-                height: 250px;
-                background-color: #FDFFF9;
-                padding-top: 2.2rem;
-                border-radius: 30px;
-                margin:auto auto;
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow: visible;
+            font-family: 'Poppins', sans-serif;
+          }
+          
+          .container {
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding-left: 55px;
+            padding-right: 128px;
+          }
+          .hamburger {
+            position: relative;
+            display: block;
+            width: 35px;
+            height: 35px;
+            padding-top: 35px;
+            cursor: pointer;
+            margin-left: 0px;
+            
+            appearance: none;
+            background: none;
+            outline: none;
+            border: none;
+          }
+          
+          .hamburger .bar, .hamburger:after, .hamburger:before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 5px;
+            background-color: #3C3744;
+            margin: 6px 0px;
+            transition: 0.4s;
+          }
+
+          
+          .hamburger.is-active:before {
+            transform: rotate(-45deg) translate(-8px, 6px);
+          }
+          
+          .hamburger.is-active:after {
+            transform: rotate(45deg) translate(-9px, -8px);
+          }
+
+          .hamburger.is-active .bar {
+            opacity: 0;
+          }
+          
+          .mobile-nav {
+            position: absolute;
+            top: 0;
+            right: 100%;
+            width: 100%;
+            min-height: 100vh;
+            display: block;
+            background-color: rgba(60, 55, 68, 0.8);
+            backdrop-filter: blur(25px);
+            padding-top: 120px;
+            transition: 0.4s;
+          }
+          
+          .mobile-nav.is-active {
+            right: 0;
+          }
+          
+          .mobile-nav a {
+            display: block;
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto 16px;
+            text-align: center;
+            padding: 12px 16px;
+            font-weight: 200;
+            color: #FBFFF1;
+            text-decoration: none;
+            transition: all 0.6s ;
+          }
+          
+          .mobile-nav a:hover {
+            background-color: #6F6978;
+            border-radius: 10px;
+          }
+          
+          @media only screen and (max-width: 768px) {
+            .navbar{
+              visibility: hidden;
             }
-            input{
-                border: none;
-                color: #A0A0A1;
-                font-family: "Poppins";
-                font-weight: 300;
-                font-size: 12pt;
-                margin-left: 2.2rem;
-                transition: all 0.5s;
-                margin-right: 2rem;
+          }
+
+          @media (min-width:768px){
+            .mobile-nav {
+              display: none;
             }
-            .lineform{
-                width: 126px;
-                background-color: #D4D5D3;
-                height: 1px;
-                margin-left: 12rem;
+          
+            .hamburger {
+              display: none;
             }
-            .add{
-                width: 280px;
-                height: 49px;
-                background-color: #F5F5F5;
-                padding-left: 1.1rem;
-                border-radius: 12px;
-            }
-            .add:focus{
-                outline: none;
-            }
-            .gen{
-                color: #A0A0A1;
-                border-radius: 10px;
-                padding: 10px;
-                padding-left: 15px;
-                padding-right: 15px;
-                margin-left: 0rem;
-                float: right;
-                size: absolute;
-            }
-            .gen:hover{
-                cursor: pointer;
-            }
-            input.text:focus{
-                outline: none;
-                width: 280px;
-                height: 49px;
-                background-color: #F5F5F5;
-                padding-left: 1.1rem;
-                border-radius: 12px;
-            }
+          }
+        .past-recipes-item-mobile{
+          margin-bottom:50px;
+            font-size: 1.5rem;
+        }
+        .past-recipes-title-mobile{
+          display: block;
+          width: 100%;
+          max-width: 200px;
+          text-align: center;
+          margin: 0 auto 16px;
+          padding: 12px 16px;
+          color: #FBFFF1;
+          font-weight: 400;
+          padding-bottom: 80px;
+        }
+
+
+        @font-face {
+            font-family: "SANSI";
+            src: url("https://fontsforyou.com/fonts/s/SANSI.otf");
+        }
+
+        @font-face {
+          font-family: "Poppins";
+          src: url("https://fonts.google.com/specimen/Poppins");
+        }
+
+          html {
+            scroll-behavior: smooth;
+            font-size: 14px;
+          }
+
+
+          *,body,::after,::before {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+          }
+          
+          main {
+            width: 100vw;
+            height: 100vh;
+            background-image: url("https://i.postimg.cc/x8jC9Rpy/pexels-lumn-1028599-1.jpg");
+            background-size: cover;
+            position: relative;
+            display: flex;
+
+          }
+
+          .navbar {
+            position: fixed;
+            width: 13%;
+            min-width:50px;
+            height: 100%;
+            left: 0;
+            bottom: 0;
+            background-color: rgba(60, 55, 68, 0.8);
+            backdrop-filter: blur(25px);
+            display: flex;
+            flex-direction: column;
+            color: rgba(251, 255, 241, 0.8);
+            max-width: 20%;
+          }
+
+          .brand {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 25%;
+            padding: 5px 0;
+            position: relative;
+
+          }
+
+          #brand-logo {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            max-width: 200px;
+            max-height: 200px;
+            margin: 0 auto;
+          }
+          #brand-hr {
+            width: 25%;
+            margin: 20px 10px;
+            opacity: 0.8;
+          }
+          #brand-name {
+            font-family: "SANSI";
+            color:  #FBFFF1 !important;
+            font-size: 2rem;
+            font-weight: 200;
+          }
+
+          .past-recipes-title {
+            font-weight: 400;
+            
+          }
+
+          .past-recipes{
+            padding: 40px 10px;
+            height: 80%;
+            width: 100%;
+            font-weight: 200;
+            padding-left: 30px;
+          }
+
+          #past-recipes-title {
+            font-size: 1.5rem;
+          }
+
+          #past-recipes-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding-left: 10%;
+            height: 80%;
+            width: 100%;
+            cursor: pointer;
+
+          }
+          .past-recipes-item {
+            margin-bottom:10px;
+            font-size: 1.5rem;
+
+          }
+
+          
+          .past-recipes-link {
+            color: inherit;
+            text-decoration: none;
+            font-family: inherit;
+            font-size: 1.8rem;
+            transition: font-size 0.5s ease-in-out,opacity 0.9s ease,box-shadow 0.5s ease;
+
+        }
+
+
+          #past-recipes-list:hover .past-recipes-link {
+            font-size: 1.3rem;
+            opacity: 0.6;
+            height: auto;
+          }
+
+          #past-recipes-list:hover .past-recipes-link:hover {
+            opacity: 1;
+            font-size: 2.4rem;
+          }
+
+       
+
 
         </style>
+
+        <script>
+          window.onload = function () {
+            window.addEventListener('scroll', function (e) {
+              if (window.pageYOffset > 100) {
+                document.querySelector("header").classList.add('is-scrolling');
+              } else {
+                document.querySelector("header").classList.remove('is-scrolling');
+              }
+            });
+          
+            const menu_btn = document.querySelector('.hamburger');
+            const mobile_menu = document.querySelector('.mobile-nav');
+          
+            menu_btn.addEventListener('click', function () {
+              menu_btn.classList.toggle('is-active');
+              mobile_menu.classList.toggle('is-active');
+            });
+          }
+        </script>
     </body>
 </html>
