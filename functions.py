@@ -58,6 +58,16 @@ def search_by_ingredients(ingredients):
         print()
     return meals
 
+# meals = search_by_ingredients(["meat","fish","eggs"])
+ic("-------------------------------------------")
+ic("-------------------------------------------")
+ic("-------------------------------------------")
+ic("-------------------------------------------")
+ic("-------------------------------------------")
+ic("-------------------------------------------")
+ic("-------------------------------------------")
+
+# print(meals)
 def chatgpt_info(meal,info):
     """
     Generate a chat response using the OpenAI GPT-3.5-turbo model.

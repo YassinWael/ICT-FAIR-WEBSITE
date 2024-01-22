@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="recipes-container">
+        <h1 id="recipes-title">Recipes!</h1>
+
+        
+
+            <div class="recipes-list">
+                {% for name,info in meals.items() %}
+                <div class="recipe">
+                    <div class="recipe-image">
+                        <img src="{{ info[0] }}" alt="Image of recipe" class="recipe-img">
+                    </div>
+
+                    <div class="recipe-name">
+                        <h2>{{ name }}</h2>
+                    </div>
+                    <div class="button">
+                        <a href="{{url_for('learn_more', meal=name, info=info)}}" role="button" type="button" id="recipe-button">View Recipe</a>
+                    </div>
+                </div>
+                {% endfor %}
+
+                
+            </div>
+       
+        
+{% endblock %}

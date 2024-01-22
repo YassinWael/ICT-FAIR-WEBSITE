@@ -67,12 +67,19 @@ def search():
 
 @app.route("/recipes")
 def recipes():
-    return render_template('recipes.html',recipes=recipes)
+    recipes = search_by_ingredients(["Chicken","Egg","Meat"])
+    for name,info in recipes.items():
+        ic(name,info)
+    return render_template('recipes.html',meals=recipes)
 
-@app.route("/learnmore/<meal>")
-def learn_more(meal):
-    content = chatgpt_info(meal)
-    return render_template('learnmore.html',content=content)
+@app.route('/learn_more/<meal>/<info>')
+def learn_more(meal, info):
+    content = chatgpt_info(meal=meal, info=info)
+    print(content)
+    return render_template('learn_more.html', content=content)
+
+
+
 if __name__ == '__main__' :
     app.run(debug=True,port=8080,host="0.0.0.0")
 

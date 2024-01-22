@@ -319,3 +319,96 @@
         }
     }
  
+    /* --------------------------------------Recipes.html------------------------------------------ */
+
+    .recipes-container {
+        width: 95%;
+        height: 100%;
+        position: absolute;
+        right: 0;
+    }
+
+    #recipes-title {
+        font-size: 6rem;
+        color: #555b6e;
+        margin-left: 2%;
+    }
+
+    .recipes-list {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+        flex-direction: column;
+        gap: 5rem;
+        padding: 3%;
+        transition: opacity 0.4s ease;
+        overflow: scroll !important;
+
+    }
+    
+    .recipe {
+        text-align: center;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        background: #e7ecf1;
+        width: 95%;
+        padding: 3px;
+        min-height: 150px;
+        border-radius: 25px;
+        margin-bottom: 2rem; /* Add margin between each recipe */
+        transition: opacity 0.3s ease;
+
+    }
+    .recipes-list:hover .recipe {
+        opacity: 0.3;
+    }
+
+    .recipes-list:hover .recipe:hover {
+        opacity: 1;
+    }
+    .recipes-list:hover .recipe-name:hover {
+        font-size: 2rem;
+    }
+
+    .recipe-image {
+        background: gray;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 95%;
+        width: 15%;
+    }
+    .recipe-img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+
+    }
+
+
+    .recipe-name {
+        width: 85%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition:  0.3s ease;
+
+    }
+
+    #recipe-button {
+        width: 25%;
+        height: 80%;
+        text-decoration: none;
+        color: inherit;
+        font-size: 2rem;
+        color: #1f46c6;
+        font-weight: bold;
+
+    }
