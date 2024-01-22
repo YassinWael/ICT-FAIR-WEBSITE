@@ -7,7 +7,7 @@ from icecream import ic
 from json import dumps,loads
 load_dotenv('settings.env')
 spoonacular_api = getenv('spoonacular')
-chatgpt_api = getenv('chatgpt')
+chatgpt_api = getenv('OPENAI_API_KEY')
 app_key = getenv('app_key')
 
 url = "https://api.spoonacular.com/recipes/"
@@ -26,6 +26,7 @@ app = Flask(__name__)
 
 
 @app.route("/")
+@app.route("/home")
 def home():
   
 
@@ -67,16 +68,21 @@ def search():
 
 @app.route("/recipes")
 def recipes():
+    global recipes
     recipes = search_by_ingredients(["Chicken","Egg","Meat"])
     for name,info in recipes.items():
         ic(name,info)
     return render_template('recipes.html',meals=recipes)
 
-@app.route('/learn_more/<meal>/<info>')
-def learn_more(meal, info):
-    content = chatgpt_info(meal=meal, info=info)
-    print(content)
-    return render_template('learn_more.html', content=content)
+@app.route('/learn_more', methods=["GET","POST"])
+def learn_more():
+    
+    meal_name = request.args.get('meal')
+    ic(meal_name)
+
+    
+    content = chatgpt_info(meal_name,recipes[meal_name])
+    return render_template('learn_more.html',content=content,name = meal_name,image = recipes[meal_name][0])
 
 
 

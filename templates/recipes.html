@@ -17,7 +17,7 @@
                         <h2>{{ name }}</h2>
                     </div>
                     <div class="button">
-                        <a href="{{url_for('learn_more', meal=name, info=info)}}" role="button" type="button" id="recipe-button">View Recipe</a>
+                        <a href="{{url_for('learn_more',meal=name,info=[info])}}" role="button" type="button" id="recipe-button">View Recipe</a>
                     </div>
                 </div>
                 {% endfor %}

@@ -85,7 +85,7 @@ def chatgpt_info(meal,info):
     """
   
     client = openai.OpenAI(api_key=chatgpt_api)
-    prompt = f"Cook {meal} only with {' and '.join(info[2])}, excluding {' and '.join(info[3])}. Be concise. Use simple words."
+    prompt = f"Cook {meal} only with {' and '.join(info[2])}, excluding {' and '.join(info[3])}. Be concise. Use simple words. Answer in a user-friendly way"
     
     print(prompt)
     response = client.chat.completions.create(
@@ -93,8 +93,11 @@ def chatgpt_info(meal,info):
         messages=[{"role": "user", "content": prompt}]
     )
     answer = (response.choices[0].message.content)
+    print(answer)
     return answer
-
+# recipes = search_by_ingredients(["Chicken","Egg","Meat"])
+# for meal_name in recipes:
+#     chatgpt_info(meal_name,recipes[meal_name])
 
 def get_quote():
     """
