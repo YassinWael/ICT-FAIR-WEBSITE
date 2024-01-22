@@ -34,7 +34,9 @@ def search_by_ingredients(ingredients):
     data = response.json()
     ic(data)
     meals = {} 
+
     for recipe in data:
+        ic(recipe)
         ic(recipe['title'])
         ic(recipe['id'])
         missed_ingredients = []
@@ -55,7 +57,6 @@ def search_by_ingredients(ingredients):
         print()
         print()
     return meals
-
 
 def chatgpt_info(meal,info):
     """
@@ -84,5 +85,13 @@ def chatgpt_info(meal,info):
     answer = (response.choices[0].message.content)
     return answer
 
-meals = search_by_ingredients('I have : ["eggs", "flour", "milk", "salt", "pepper"]')
-ic(meals)
+
+def get_quote():
+    """
+    Function to retrieve a quote from an external API with a maximum length of 50 characters.
+    Returns the content of the quote.
+    """
+    headers['maxLength'] = 40
+    params = requests.get('https://api.quotable.io/quotes/random',params=headers).json()
+    return params[0]['content']
+

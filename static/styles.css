@@ -1,0 +1,321 @@
+
+
+
+    @font-face {
+        font-family: "Poppins";
+        src: url("https://fonts.google.com/specimen/Poppins");
+        
+    }
+
+    @font-face {
+        font-family: "SANSI";
+        src: url("https://fontsforyou.com/fonts/s/SANSI.otf");
+    }
+
+    @font-face {
+        font-family: "BitstreamArrusItalicBt";
+        src: url("https://fontsforyou.com/fonts/b/BitstreamArrusItalicBt.ttf");
+    }
+
+    html {
+    scroll-behavior: smooth;
+    font-size: 13.5px;
+    }
+
+
+    *,body,::after,::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+    overflow: hidden;
+
+
+    }
+    
+    main {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://i.postimg.cc/zfMKxkxv/background2.jpg");
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    }
+
+    .navbar {
+    position: fixed;
+    width: 20%;
+    min-width:50px;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: rgb(20, 20, 20,0.8);
+    backdrop-filter: blur(30px);
+    display: flex;
+    flex-direction: column;
+    color: rgba(200,200,200,0.8);
+    font-family: 'Poppins', sans-serif;
+    }
+
+
+    .main-content {
+        width: 84%;
+        height: 100%;
+        position: absolute;
+        right: 0;
+    }
+    .brand {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 25%;
+    padding: 5px 0;
+    position: relative;
+
+    }
+
+    #brand-logo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 200px;
+    max-height: 200px;
+    margin: 0 auto;
+
+
+    }
+    #brand-hr {
+    position: absolute;
+    width: 25%;
+    margin-top: 10px;
+    opacity: 0.8;
+    bottom: 2px;
+    }
+    #brand-name {
+    font-family: "SANSI";
+
+    color: white !important;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 20px;
+
+    }
+
+    .past-recipes {
+    padding: 40px 10px;
+    height: 80%;
+    width: 100%;
+
+    }
+
+    #past-recipes-title {
+    font-size: 1.5rem;
+    letter-spacing: 1.5px;
+    }
+
+    #past-recipes-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-left: 10%;
+    height: 80%;
+    width: 100%;
+    cursor: pointer;
+
+    }
+    .past-recipes-item {
+    margin-bottom:8px !important;
+    font-size: 0.9rem;
+
+    }
+
+    
+    .past-recipes-link {
+    color: inherit;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 1.2rem;
+    transition: font-size 0.5s ease-in-out,opacity 0.9s ease,box-shadow 0.5s ease,color 0.3s ease;
+
+}
+
+
+    #past-recipes-list:hover .past-recipes-link {
+    font-size: 1.3rem;
+    opacity: 0.6;
+    }
+
+    #past-recipes-list:hover .past-recipes-link:hover {
+    opacity: 1;
+    font-size: 2.2rem;
+    letter-spacing: -1px;
+    color: rgba(255,255,255,1);
+    margin: 0;
+
+    }
+
+
+    .container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+   
+
+    .dark {
+        position: relative !important;
+        width: 50%;
+        height: 40%;
+        max-width: 800px;
+        max-height: 800px;
+        margin:0;
+        padding:0
+        
+    }
+    img[id="brand-logo dark"] {
+    position: absolute !important;
+    top: 2px !important;
+    width: 100%;
+    height: 80%;
+    max-width: 400px;
+    max-height: 400px;
+
+    margin:0
+    }
+    h1[id="brand-name dark"] {
+    position: absolute;
+    bottom: 30%;
+    color: white;
+    font-family: "SANSI";
+
+    font-size: 2.5rem;
+    text-align: center;
+    }
+    
+    #start {
+    font-size: clamp(1.2rem,2vw,2.5rem);
+    font-family: "SANSI";
+    color: black;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    align-self:center ;
+    margin: auto 0;
+    width: 20%;
+    line-height: 2.2rem;
+    height: 13%;
+    min-width: 120px;
+    max-width: 400px;
+    max-height: 90px;
+    text-align: center;
+    border-radius: 20px;
+    background: white;
+    backdrop-filter: blur(25px);
+    opacity: 0.9;
+    transition: 0.4s ease;
+    position: relative;
+    z-index: 100;
+    overflow: hidden;
+        
+    }   
+    #start span{
+        position: absolute;
+        bottom: 0;
+        transform: translateY(25%);
+        font-family: inherit;
+        font-size: 1.8rem;
+        letter-spacing: 1.5px;
+        width: 100%;
+        height: 90%;
+    }
+    #start:hover {
+        box-shadow: 0 0 50px 5px white;
+        background-color: blackc;
+        scale: 1.1;
+        letter-spacing: 0.2em;
+        width: 25%;
+    }
+
+    #start::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 0%;
+        border-radius: 20px;
+        animation: change-color 2.8s infinite linear;
+      
+
+        
+    }
+    #start:hover::before {
+        width: 100%;
+        height: 100%;
+    }
+
+    @keyframes change-color {
+        0% {
+            border: 4.5px solid rgba(255, 69, 0, 0.7); /* Orange */
+        }
+        25% {
+            border: 4.5px solid rgba(30, 144, 255, 0.7); /* Dodger Blue */
+        }
+        50% {
+            border: 4.5px solid rgba(255, 0, 255, 0.7); /* Magenta */
+        }
+        75% {
+            border: 4.5px solid rgba(0, 128, 0, 0.7); /* Green */
+        }
+        100% {
+            border: 4.5px solid rgba(255, 69, 0, 0.7); /* Orange */
+        }
+    }
+    
+
+    
+    #quote {
+        font-family: "BitstreamArrusItalicBt","Poppins";
+        font-size: clamp(1.6rem,5vh,2.5rem);
+        color: rgba(50, 23, 10, 0.91);
+        background: rgba(255, 235, 205,0.6);
+        font-style: italic;
+
+    }
+
+
+    @media only screen and (max-width: 600px) {
+        .navbar {
+            display: none;
+            width: 0;
+        }
+
+        .main-content,.container {
+            width: 100%;
+        }
+
+        html {
+            font-size: 10px;
+        }
+        
+        #start {
+            width: 69%;
+        }
+        #start span {
+            font-size: 3.2rem;
+            text-align: center;
+        }
+    }
+ 

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container">
+
+        
+        <div class="brand dark">
+            <img src="../static/no_text (3).svg" alt="Cookarino Logo" id="brand-logo dark">
+            <h1 id="brand-name dark">Cookarino</h1>
+         </div>
+
+        <p id="quote">{{ quote }}</p>
+        <a href="{{ url_for('home') }}" role="button" type="button" id="start">
+            <span class="text-center">Start Cooking!</span>
+        </a>
+    </div>
+{% endblock %}

@@ -1,8 +1,10 @@
 # main.py
-from flask import Flask,request,render_template
+from flask import Flask,request,render_template,make_response
 from dotenv import load_dotenv
 from os import getenv
-from functions import search_by_ingredients,chatgpt_info
+from functions import search_by_ingredients,chatgpt_info,get_quote
+from icecream import ic
+from json import dumps,loads
 load_dotenv('settings.env')
 spoonacular_api = getenv('spoonacular')
 chatgpt_api = getenv('chatgpt')
@@ -25,7 +27,35 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template('home.html')
+  
+
+    quote = get_quote()
+    quote_list = request.cookies.get('quote_list')
+
+    ic(quote_list)
+    
+    if not quote_list: 
+        quote_list = ["With great Power, Comes great Responsibility"]
+    else:
+        
+        quote_list = loads(quote_list) #Convert json string to list.
+        while len(quote_list)>=3:
+            quote_list.pop(0)
+        quote_list.append(quote)
+    past_quotes = quote_list
+   
+    for past in past_quotes:
+        ic(past)
+    json_list = dumps(quote_list) #Convert list to json string to send to page.
+   
+    
+    
+    response = make_response(render_template('home.html', quote=quote,past_quotes = past_quotes))
+    response.set_cookie('quote_list', json_list) 
+    ic(json_list)
+
+    return response  # Return the response here, not render_template again
+
 
 @app.route("/search",methods=['POST','GET'])
 def search():
@@ -35,7 +65,15 @@ def search():
         recipes = search_by_ingredients(ingredients)  #Dictionary with meals, and their info.
     return render_template('search.html')
 
+@app.route("/recipes")
+def recipes():
+    return render_template('recipes.html',recipes=recipes)
+
+@app.route("/learnmore/<meal>")
+def learn_more(meal):
+    content = chatgpt_info(meal)
+    return render_template('learnmore.html',content=content)
 if __name__ == '__main__' :
-    app.run(debug=True)
+    app.run(debug=True,port=8080,host="0.0.0.0")
 
 # testing sync again.9
