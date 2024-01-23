@@ -58,13 +58,13 @@ def home():
     return response  # Return the response here, not render_template again
 
 
-@app.route("/search",methods=['POST','GET'])
+@app.route("/form",methods=['POST','GET'])
 def search():
     if request.method == "POST":
         ingredients = request.form['ingredients']
         global recipes
         recipes = search_by_ingredients(ingredients)  #Dictionary with meals, and their info.
-    return render_template('search.html')
+    return render_template('form.html')
 
 @app.route("/recipes")
 def recipes():

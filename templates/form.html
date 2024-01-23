@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container-y">
+    <div class="form">
+        <form class="ingredients" action="">
+            <input class="text" class="fir-text" type="text" placeholder="First Ingredient"name="fingredient" id="fingredient">
+            <div class="lineform"><hr></div>
+            <input class="text" class="sec-text" type="text" placeholder="Second Ingredient"name="singredient" id="singredient">
+            <div class="lineform"><hr></div>
+            <input class="add"  type="button"  value="&#43 Add More Ingredients" id="adding">            
+            <br>
+            <input class="gen" type="submit" value="Generate" id="generator">
+        </form>
+        <p><i>*Assuming that you have both water and salt</i></p>
+    </div>
+    </div>
+    
+
+
+
+
+<script>
+    let counter = 3;
+    document.getElementById("adding").addEventListener("click", function() {
+        if (counter <= 5) {
+            let newInput = document.createElement("input");
+            newInput.type = "text";
+            newInput.className = "text";
+            newInput.placeholder = getNumberWithSuffix(counter) + " Ingredient";
+            newInput.name = "ingredient" + counter;
+            newInput.id = "ingredient" + counter;
+            let newLineForm = document.createElement("div");
+            newLineForm.className = "lineform";
+            newLineForm.appendChild(document.createElement("hr"));
+            document.querySelector(".ingredients").insertBefore(newInput, document.querySelector(".add"));
+            document.querySelector(".ingredients").insertBefore(newLineForm, document.querySelector(".add"));
+            counter++;
+        }
+
+    });
+    
+    function getNumberWithSuffix(number) {
+        let suffix = "";
+        switch (number) {
+            case 3:
+                suffix = "Third";
+                break;
+            case 4:
+                suffix = "Fourth";
+                break;
+            case 5:
+                suffix = "Fifth";
+                break;
+            default:
+                suffix = "Fifth";
+                break;
+        }
+        return suffix;
+    }
+    
+
+</script>
+{% endblock %}
