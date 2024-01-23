@@ -35,6 +35,10 @@ overflow-x: hidden;
 
 }
 
+a,button {
+    overflow: hidden !important;
+}
+
 main {
 width: 100vw;
 height: 100vh;
