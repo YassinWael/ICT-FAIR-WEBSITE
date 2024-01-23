@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/styles.css">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link href="https://fontsforyou.com/fonts/s/SANSI.otf" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
     <title>Cookarino</title>
 </head>
 <body>
@@ -16,13 +12,12 @@
             <nav class="navbar">
               <div class="brand" anchor = "navbar">
                 <a href="{{url_for('home')}}">
-                <button class="home-button"> 
-                <img src="../static/no_text (3).svg" alt="Cookarino Logo" id="brand-logo">
-                </button>
-              </a>
+                  <button class="home-button"> 
+                  <img src="../static/no_text (3).svg" alt="Cookarino Logo" id="brand-logo">
+                  </button>
+                </a>
                 <h1 id="brand-name">Cookarino</h1>
                 <hr id="brand-hr">
-
               </div>
               
               <div class="past-recipes">
@@ -36,63 +31,67 @@
                   </ul>
                 </div>
             </nav>
-            <div class="main-content" >
-              <nav class="mobile-nav">
+
+            <!-- Mobile Navbar -->
+            <div class="navigation">
+              <button class="hamburger" onclick="show()">
+                  <div id="bar1" class="bar"></div>
+                  <div id="bar2" class="bar"></div>
+                  <div id="bar3" class="bar"></div>
+                  Click me
+              </button>
+      
+              <nav>
                 <div class="brand" anchor = "navbar">
-                  <a href="home.html">
-                  <button class="home-button"> 
-                  <img src="../static/no_text (3).svg" alt="Cookarino Logo" id="brand-logo">
-                  </button>
-                </a>
+                  <a href="{{url_for('home')}}">
+                    <button class="home-button"> 
+                    <img src="../static/no_text (3).svg" alt="Cookarino Logo" id="brand-logo">
+                    </button>
+                  </a>
                   <h1 id="brand-name">Cookarino</h1>
                   <hr id="brand-hr">
-                <h2 class="past-recipes-title-mobile" id="past-recipes-title">Past Recipes</h2>
+                </div>
                 
-                <ul id="past-recipes-list">
-                  {% for quote_ in past_quotes %}
-                  <li class="past-recipes-item-mobile">
-                    <a class="past-recipes-link" href="#">Item 1</a>
-                  </li>
-                  {% endfor %}
-                
-                  </ul>
+                <div class="past-recipes">
+                   <h2 id="past-recipes-title">Past Recipes</h2>
+                    <ul id="past-recipes-list">
+                      {% for quote_ in past_quotes %}
+                        <li class="past-recipes-item">
+                          <a class="past-recipes-link" href="#">{{ quote_ }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
               </nav>
-              <button class="hamburger">
-                <div class="bar"></div>
-              </button>
-
-            <script>
-              window.onload = function () {
-                window.addEventListener('scroll', function (e) {
-                  if (window.pageYOffset > 100) {
-                    document.querySelector("header").classList.add('is-scrolling');
-                  } else {
-                    document.querySelector("header").classList.remove('is-scrolling');
-                  }
-                });
-              
-                const menu_btn = document.querySelector('.hamburger');
-                const mobile_menu = document.querySelector('.mobile-nav');
-              
-                menu_btn.addEventListener('click', function () {
-                  menu_btn.classList.toggle('is-active');
-                  mobile_menu.classList.toggle('is-active');
-                });
-              }
-            </script>
+      
+          </div>
+            <div class="main-content" >
             {% block content %}{%endblock%}
-              
+
             </div>
+          
+        
+            <script>
+              function show(){
+                console.log("Pressed")
+                document.querySelector('.hamburger').classList.toggle('open')
+                document.querySelector('.navigation').classList.toggle('active')
+            }
+            </script>
         </main>
   
   
   
   
   
-  
+
   
   
         
         
     </body>
+
+
 </html>
+
+
