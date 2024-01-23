@@ -29,7 +29,8 @@ box-sizing: border-box;
 margin: 0;
 padding: 0;
 font-family: "Poppins";
-overflow: hidden;
+overflow-y: auto;
+overflow-x: hidden;
 
 
 }
@@ -73,7 +74,7 @@ width: 100%;
 flex-direction: column;
 justify-content: flex-start;
 align-items: center;
-height: 25%;
+height: 30%;
 padding: 5px 0;
 position: relative;
 
@@ -88,11 +89,12 @@ max-height: 200px;
 margin: 0 auto;
 
 
+
 }
 #brand-hr {
 position: absolute;
 width: 25%;
-margin-top: 10px;
+margin-top: 20px;
 opacity: 0.8;
 bottom: 2px;
 }
@@ -102,7 +104,7 @@ font-family: "SANSI";
 color: white !important;
 font-size: 2rem;
 position: absolute;
-bottom: 20px;
+top: 78%;
 
 }
 
@@ -216,7 +218,6 @@ backdrop-filter: blur(25px);
 opacity: 0.9;
 transition: 0.4s ease;
 position: relative;
-z-index: 100;
 overflow: hidden;
     
 }   
@@ -254,10 +255,21 @@ overflow: hidden;
     font-size: clamp(1.6rem,5vh,2.5rem);
     color: rgba(50, 23, 10, 0.91);
     font-style: italic;
+    background: rgba(255, 255, 255, 0.49);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.3px);
+    -webkit-backdrop-filter: blur(6.3px);
+    border: 1px solid rgba(255, 255, 255, 1);
+    overflow-y: auto;
+    width: 50%;
+    text-align: center;
+    height: 25% !important;
+    
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 728px) {
     .navbar {
         display: none;
         width: 0;
@@ -278,6 +290,20 @@ overflow: hidden;
         font-size: 3.2rem;
         text-align: center;
     }
+
+    .form{
+        width: 100%;
+        max-height: 80%;
+    }
+
+    .container-y{
+        width: 100%;
+     
+    }
+
+    .gen{
+        margin-left: 50%;
+      }
 }
 
 /* --------------------------------------Recipes.html------------------------------------------ */
@@ -364,16 +390,6 @@ overflow: hidden;
 
 }
 
-@media (max-width:768px){
-    .form{
-        max-width: 95%;
-    }
-
-    .container-y{
-        width: 100%;
-     
-    }
-  }
 
 
 .container-y {
@@ -427,7 +443,6 @@ input{
     margin-right: 2rem;
     height: 20%;
     min-height: 50px;
-    z-index: 1000;
 
 }
 
@@ -491,32 +506,9 @@ p{
 }
 
 
-
-@media (max-width:768px){
-
-
-      .gen{
-        margin-left: 50%;
-      }
-
-    
-      
-}
-
+ 
 
   
-  @media only screen and (max-width: 768px) {
-    .navbar{
-      display: none;
-      width: 0;
-    }
-
-    .main-content{
-        width: 100%;
-    }
-  }
-
-
 
   .home-button{
     background-color:#86868600;
@@ -598,89 +590,151 @@ margin: 0;
 
 }
 
-.home-button{
+.home-button:hover{
 cursor: pointer;
 }
 
   }
 
-a,button{
-cursor: pointer;
-}
+/* ------------------------Learn-More.html----------------------- */
 
-nav{
-    position: absolute;
-    top: 100px;
-    right: 50px;
-    width: 250px;
-}
-
-.navigation{
-    position: fixed;
-    right: -500px;
-    width: 350px;
+.recipe-more {
+    display: flex;
+    width: 96%;
+    flex-direction: column;
     height: 100%;
-    background-color: #000;
-    transition: .5s;
-}
-
-.navigation ul li{
-    color: #fff;
-    text-align: right;
-    text-transform: uppercase;
-    list-style-type: none;
-    font-size: 1.5em;
-    padding: 20px 30px;
-    border-bottom: 1pt solid #252525;
-}
-
-.hamburger, .bar{
-    position: fixed;
-}
-
-.hamburger{
-
-    top: 5%;
-    left: 95%;
-    width: 30px;
-    height: 30px;
-    transform: translateY(-50%);
-    background: 0 0;
-    z-index: 1000;
-   
-    border: 3px solid blue;
-}
-
-.bar{
-    top: 3px;
-    background: #000;
-    width: 100%;
-    height: 4px;
-    transition: all .3s ease-in;
-}
-
-#bar2{
-    top: 11px;
-}
-
-#bar3{
-    top: 19px;
-}
-
-.navigation.active{
     right: 0;
+    position: absolute;
+}
+.recipe-info {
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+.recipe-img-info {
+    border-radius: 30px;
+    width: 35%;
+    height: 30%;
+    box-shadow: 0 0 30px 10px #000;
+    object-fit: cover;
+
+}
+#info {
+    font-size: large;
+    color: black;
+
+    width: 90%;
+    height: 40%;
+    border-radius: 30px;
+    margin-top: 2%;
+    text-align: center;
+    text-overflow: clip;
+
+   
+    background: rgba(255, 255, 255, 0.49);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.3px);
+    -webkit-backdrop-filter: blur(6.3px);
+    border: 1px solid rgba(255, 255, 255, 1);
+    overflow-y: auto;
+
 }
 
-.hamburger.open #bar1{
-    background-color: #fff;
-    transform: rotate(45deg) translate(6px, 5px);
+
+  /* Phone Navbar */
+@media only screen and (max-width: 728px) {
+  
+    a,button{
+        cursor: pointer;
+    }
+    
+    .mobile-nav{
+        position: relative;
+        transition: 2s ease;
+        
+        width: 250px;
+    }
+    
+    .navigation{
+        position: fixed;
+        right: -500px;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        transition: right 3s ease;
+        z-index: 10;
+    }
+    
+    .navigation ul li{
+        color: #fff;
+        text-align: right;
+        text-transform: uppercase;
+        list-style-type: none;
+        font-size: 1.5em;
+        padding: 20px 30px;
+        border-bottom: 1pt solid #252525;
+    }
+    
+    .hamburger, .bar{
+        position: fixed;
+    }
+    
+    .hamburger{
+        display: block;
+        top: 5%;
+        left: 5%;
+        width: 30px;
+        height: 30px;
+        transform: translateY(-50%);
+        border: 0;
+        background: 0 0;
+        z-index: 20;
+    }
+    
+    .bar{
+        top: 3px;
+        background: #000;
+        width: 100%;
+        height: 4px;
+        transition: all .3s ease-in;
+    }
+    
+    #bar2{
+        top: 11px;
+    }
+    
+    #bar3{
+        top: 19px;
+    }
+    
+    .navigation.active{
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hamburger.open #bar1{
+        background-color: #fff;
+        transform: rotate(45deg) translate(6px, 5px);
+    }
+    
+    .hamburger.open #bar2{
+        background-color: transparent;
+    }
+    
+    .hamburger.open #bar3{
+        background-color: #fff;
+        transform: rotate(-45deg) translate(6px, -5px);
+    }
+    
+    
 }
 
-.hamburger.open #bar2{
-    background-color: transparent;
-}
-
-.hamburger.open #bar3{
-    background-color: #fff;
-    transform: rotate(-45deg) translate(6px, -5px);
+.navigation {
+    display: none;
 }

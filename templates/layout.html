@@ -12,10 +12,11 @@
             <nav class="navbar">
               <div class="brand" anchor = "navbar">
                 <a href="{{url_for('home')}}">
-                  <button class="home-button"> 
+                  <button  class="home-button"> 
                   <img src="../static/no_text (3).svg" alt="Cookarino Logo" id="brand-logo">
                   </button>
                 </a>
+
                 <h1 id="brand-name">Cookarino</h1>
                 <hr id="brand-hr">
               </div>
@@ -23,9 +24,9 @@
               <div class="past-recipes">
                  <h2 id="past-recipes-title">Past Recipes</h2>
                   <ul id="past-recipes-list">
-                    {% for quote_ in past_quotes %}
+                    {% for meal_ in past_meals %}
                       <li class="past-recipes-item">
-                        <a class="past-recipes-link" href="#">{{ quote_ }}</a>
+                        <a class="past-recipes-link" href="#">{{ meal_ }}</a>
                       </li>
                     {% endfor %}
                   </ul>
@@ -33,37 +34,45 @@
             </nav>
 
             <!-- Mobile Navbar -->
+            <button class="hamburger" onclick="show()">
+              <div id="bar1" class="bar"></div>
+              <div id="bar2" class="bar"></div>
+              <div id="bar3" class="bar"></div>
+          </button>
             <div class="navigation">
-              <button class="hamburger" onclick="show()">
-                  <div id="bar1" class="bar"></div>
-                  <div id="bar2" class="bar"></div>
-                  <div id="bar3" class="bar"></div>
-                  Click me
-              </button>
+              
       
-              <nav>
+              <nav class="mobile-nav">
                 <div class="brand" anchor = "navbar">
                   <a href="{{url_for('home')}}">
-                    <button class="home-button"> 
+                    <button  class="home-button"> 
                     <img src="../static/no_text (3).svg" alt="Cookarino Logo" id="brand-logo">
                     </button>
                   </a>
+  
                   <h1 id="brand-name">Cookarino</h1>
                   <hr id="brand-hr">
                 </div>
                 
                 <div class="past-recipes">
-                   <h2 id="past-recipes-title">Past Recipes</h2>
-                    <ul id="past-recipes-list">
-                      {% for quote_ in past_quotes %}
+                   <h1 id="past-recipes-title">Past Recipes</h1>                    <ul id="past-recipes-list">
+                      {% for meal_ in past_meals %}
                         <li class="past-recipes-item">
-                          <a class="past-recipes-link" href="#">{{ quote_ }}</a>
+                          <a class="past-recipes-link" href="#">{{ meal_ }}</a>
                         </li>
                       {% endfor %}
                     </ul>
                   </div>
               </nav>
       
+          </div>
+
+
+
+
+
+
+
           </div>
             <div class="main-content" >
             {% block content %}{%endblock%}

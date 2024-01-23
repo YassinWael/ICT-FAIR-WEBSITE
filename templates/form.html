@@ -2,10 +2,10 @@
 {% block content %}
 <div class="container-y">
     <div class="form">
-        <form class="ingredients" action="">
-            <input class="text" class="fir-text" type="text" placeholder="First Ingredient"name="fingredient" id="fingredient">
+        <form class="ingredients" action="#" method="POST">
+            <input class="text" class="fir-text" type="text" placeholder="First Ingredient"name="in1" id="fingredient">
             <div class="lineform"><hr></div>
-            <input class="text" class="sec-text" type="text" placeholder="Second Ingredient"name="singredient" id="singredient">
+            <input class="text" class="sec-text" type="text" placeholder="Second Ingredient"name="in2" id="singredient">
             <div class="lineform"><hr></div>
             <input class="add"  type="button"  value="&#43 Add More Ingredients" id="adding">            
             <br>
@@ -27,7 +27,7 @@
             newInput.type = "text";
             newInput.className = "text";
             newInput.placeholder = getNumberWithSuffix(counter) + " Ingredient";
-            newInput.name = "ingredient" + counter;
+            newInput.name = "in" + counter;
             newInput.id = "ingredient" + counter;
             let newLineForm = document.createElement("div");
             newLineForm.className = "lineform";
