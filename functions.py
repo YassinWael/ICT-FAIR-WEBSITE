@@ -12,7 +12,7 @@ chatgpt_api = getenv('chatgpt')
 url = "https://api.spoonacular.com/recipes/"
 
 headers = {
-    "apiKey":spoonacular_api,    
+    "apiKey":'deb6da54c3b14ee69c8cddc7fc44d96d',    
 }
 def search_by_ingredients(ingredients):
     """
@@ -26,8 +26,8 @@ def search_by_ingredients(ingredients):
     """
    
     headers['ingredients'] = ingredients
-    headers['number'] = 5
-    headers['ignorePanrty'] = 'false'
+    headers['number'] = 8
+    headers['ignorePanrty'] = 'true'
     ic("Sending Api request...")
     response = requests.get(f"{url}findByIngredients",params=headers)
     ic(f"Received response: {response}")
@@ -57,8 +57,6 @@ def search_by_ingredients(ingredients):
         print()
         print()
     return meals
-
-# meals = search_by_ingredients(["meat","fish","eggs"])
 ic("-------------------------------------------")
 ic("-------------------------------------------")
 ic("-------------------------------------------")

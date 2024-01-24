@@ -322,7 +322,7 @@ overflow: hidden;
 #recipes-title {
     font-size: 6rem;
     color: #555b6e;
-    margin-left: 2%;
+    text-align: center;
 }
 
 .recipes-list {
