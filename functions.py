@@ -1,13 +1,14 @@
 import requests
 from dotenv import load_dotenv
-from os import getenv
+from os import environ
 from icecream import ic
 import openai
 
 # Loading keys
 load_dotenv('settings.env')
-spoonacular_api = getenv('spoonacular')
-chatgpt_api = getenv('chatgpt')
+spoonacular_api = environ.get('spoonacular')
+chatgpt_api = environ.get('OPENAI_API_KEY')
+app_key = environ.get('app_key')
 
 url = "https://api.spoonacular.com/recipes/"
 
