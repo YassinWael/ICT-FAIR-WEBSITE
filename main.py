@@ -9,7 +9,7 @@ load_dotenv('settings.env')
 spoonacular_api = getenv('spoonacular')
 chatgpt_api = getenv('OPENAI_API_KEY')
 app_key = getenv('app_key')
-
+ic(spoonacular_api,chatgpt_api,app_key)
 url = "https://api.spoonacular.com/recipes/"
 
 headers = {
