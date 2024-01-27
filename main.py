@@ -5,7 +5,7 @@ from os import getenv,environ
 from functions import search_by_ingredients,chatgpt_info,get_quote
 from icecream import ic
 from json import dumps,loads
-load_dotenv('settings.env')
+
 spoonacular_api = environ.get('spoonacular')
 chatgpt_api = environ.get('OPENAI_API_KEY')
 app_key = environ.get('app_key')
