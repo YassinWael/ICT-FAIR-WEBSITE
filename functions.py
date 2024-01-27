@@ -13,7 +13,7 @@ app_key = environ.get('app_key')
 url = "https://api.spoonacular.com/recipes/"
 
 headers = {
-    "apiKey":'chatgpt_api',    
+    "apiKey":spoonacular_api,    
 }
 def search_by_ingredients(ingredients):
     """
@@ -29,7 +29,7 @@ def search_by_ingredients(ingredients):
     headers['ingredients'] = ingredients
     headers['number'] = 8
     headers['ignorePanrty'] = 'true'
-    ic("Sending Api request...")
+    ic(f"Sending Api request...: {headers['apiKey']}")
     response = requests.get(f"{url}findByIngredients",params=headers)
     ic(f"Received response: {response}")
     data = response.json()
