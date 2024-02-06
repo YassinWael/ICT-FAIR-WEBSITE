@@ -5,15 +5,25 @@ from icecream import ic
 import openai
 
 # Loading keys
-load_dotenv('settings.env')
+
+env_vars = load_dotenv('settings.env')
+
+if not env_vars:
+    env_vars = load_dotenv(r'/home/Cookarino/mysite/ICT-FAIR-WEBSITE/settings.env') # Host server
+
+
+
+spoonacular_api = environ.get('spoonacular')
+ic(spoonacular_api)
 chatgpt_api = environ.get('OPENAI_API_KEY')
 client = openai.OpenAI(api_key=chatgpt_api)
 
 
 
 
+
 def search_by_ingredients(ingredients):
-    spoonacular_api = environ.get('spoonacular')
+    
     url = "https://api.spoonacular.com/recipes/"
 
     headers = {
