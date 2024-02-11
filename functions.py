@@ -108,7 +108,6 @@ def get_quote():
     """
     headers_quote = {}
     headers_quote['maxLength'] = 50
-    params = requests.get('https://api.quotable.io/quotes/random',params=headers_quote).json()
+    params = requests.get('https://api.quotable.io/quotes/random',params=headers_quote,verify=False).json()
     return params[0]['content']
 
-chatgpt_info('Bacon wrapped Filet Mignon',['https://spoonacular.com/recipeImages/633338-312x231.jpg', 633338, ['beef tenderloin steaks'], ['bacon', 'garlic']])
