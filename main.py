@@ -1,5 +1,5 @@
 # main.py
-from flask import Flask,request,render_template,make_response
+from flask import Flask,request,render_template,make_response,send_file
 from dotenv import load_dotenv
 from os import environ
 from functions import search_by_ingredients,chatgpt_info,get_quote
@@ -114,7 +114,9 @@ def learn_more():
 
     return response
 
-
+@app.route('/OneSignalSDKWorker.js')
+def push_notifications():
+    return send_file('OneSignalSDKWorker.js')
     
 
 
