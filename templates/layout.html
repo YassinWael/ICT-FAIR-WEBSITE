@@ -13,14 +13,16 @@
     crossorigin="anonymous"></script>
 
     <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-    <script>
-      window.OneSignalDeferred = window.OneSignalDeferred || [];
-      OneSignalDeferred.push(function(OneSignal) {
-        OneSignal.init({
-          appId: "dd1e35e6-cca7-442b-884d-6a8a8c91ba3e",
-        });
-      });
-    </script>
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script src="/OneSignalSDKWorker.js"></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(function(OneSignal) {
+    OneSignal.init({
+      appId: "788b575d-e0ab-4662-873d-98d8837e1605",
+    });
+  });
+</script>
 </head>
 <body>
         
